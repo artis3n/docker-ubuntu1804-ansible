@@ -30,3 +30,18 @@ jobs:
         username: ${{ secrets.docker_username }}
         password: ${{ secrets.docker_password }}
         tag_names: true
+    
+    - name: Deploy the Docker image to GitHub Package Registry (latest tag)
+      uses: elgohr/Publish-Docker-Github-Action@master
+      with:
+        name: artis3n/docker-ubuntu1804-ansible/docker-ubuntu1804-ansible
+        username: ${{ github.actor }}
+        password: ${{ secrets.GITHUB_TOKEN }}
+        registry: docker.pkg.github.com
+
+    - name: Deploy the Docker image to Docker Hub (latest tag)
+      uses: elgohr/Publish-Docker-Github-Action@master
+      with:
+        name: artis3n/docker-ubuntu1804-ansible
+        username: ${{ secrets.docker_username }}
+        password: ${{ secrets.docker_password }}
