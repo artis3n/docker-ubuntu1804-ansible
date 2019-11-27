@@ -18,6 +18,7 @@ RUN apt-get update \
 RUN sed -i 's/^\($ModLoad imklog\)/#\1/' /etc/rsyslog.conf
 
 # Cleanup unwanted systemd files -- See https://hub.docker.com/_/centos/
+# See https://github.com/geerlingguy/docker-ubuntu1804-ansible/pull/12
 RUN find /lib/systemd/system/sysinit.target.wants/* ! -name systemd-tmpfiles-setup.service -delete; \
 rm -f /lib/systemd/system/multi-user.target.wants/*;\
 rm -f /etc/systemd/system/*.wants/*;\
@@ -29,6 +30,7 @@ rm -f /lib/systemd/system/anaconda.target.wants/*;
 
 # Remove unnecessary getty and udev targets that result in high CPU usage when using
 # multiple containers with Molecule (https://github.com/ansible/molecule/issues/1104)
+# See https://github.com/geerlingguy/docker-ubuntu1804-ansible/pull/10
 RUN rm -f /lib/systemd/system/systemd*udev* \
   && rm -f /lib/systemd/system/getty.target
 
@@ -46,6 +48,7 @@ RUN mkdir -p /etc/ansible
 RUN echo "[local]\nlocalhost ansible_connection=local" > /etc/ansible/hosts
 
 # Create `ansible` user with sudo permissions
+# See https://github.com/geerlingguy/docker-ubuntu1804-ansible/pull/11
 ENV ANSIBLE_USER=ansible SUDO_GROUP=sudo
 RUN set -xe \
   && groupadd -r ${ANSIBLE_USER} \
