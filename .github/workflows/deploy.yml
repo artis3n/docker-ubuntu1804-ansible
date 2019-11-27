@@ -13,8 +13,6 @@ jobs:
 
     steps:
     - uses: actions/checkout@v1
-    - name: Build the Docker image
-      run: docker build -t artis3n/docker-ubuntu1804-ansible .
     - name: Deploy the Docker image
       uses: elgohr/Publish-Docker-Github-Action@master
       with:
