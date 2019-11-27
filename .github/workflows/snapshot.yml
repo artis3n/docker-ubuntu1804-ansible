@@ -1,0 +1,21 @@
+name: Deploy Docker Image
+
+on: [pull_request]
+
+jobs:
+
+  snapshot:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v1
+
+    - name: Deploy the Docker image snapshot to GitHub Package Registry
+      uses: elgohr/Publish-Docker-Github_action@master
+      with:
+        name: artis3n/docker-ubuntu1804-ansible/docker-ubuntu1804-ansible
+        username: ${{ github.actor }}
+        password: ${{ secrets.GITHUB_TOKEN }}
+        registry: docker.pkg.github.com
+        snapshot: true
