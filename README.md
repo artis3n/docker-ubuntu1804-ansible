@@ -3,7 +3,8 @@
 [![Actions Status](https://github.com/artis3n/docker-ubuntu1804-ansible/workflows/Docker%20Image%20CI/badge.svg)](https://github.com/artis3n/docker-ubuntu1804-ansible/actions)
 ![GitHub release (latest by date)](https://img.shields.io/github/v/release/artis3n/docker-ubuntu1804-ansible)
 ![Docker Pulls](https://img.shields.io/docker/pulls/artis3n/docker-ubuntu1804-ansible)
-![GitHub](https://img.shields.io/github/license/artis3n/docker-ubuntu1804-ansible)
+![GitHub last commit](https://img.shields.io/github/last-commit/artis3n/docker-ubuntu1804-ansible)
+![License](https://img.shields.io/github/license/artis3n/docker-ubuntu1804-ansible)
 
 Ubuntu 18.04 LTS (Bionic) Docker container for Ansible playbook and role testing.
 
