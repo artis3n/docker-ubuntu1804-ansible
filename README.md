@@ -1,6 +1,6 @@
 # Ubuntu 18.04 LTS (Bionic) Ansible Test Image
 
-[![Actions Status](https://github.com/artis3n/docker-ubuntu-1804-ansible/workflows/Docker%20Image%20CI/badge.svg)](https://github.com/artis3n/docker-ubuntu-1804-ansible/actions)
+![Actions Status](https://github.com/artis3n/docker-ubuntu1804-ansible/workflows/Docker%20Image%20CI/badge.svg)
 [![Docker Automated build](https://img.shields.io/docker/automated/artis3n/docker-ubuntu1804-ansible.svg?maxAge=2592000)](https://hub.docker.com/r/artis3n/docker-ubuntu1804-ansible/)
 
 Ubuntu 18.04 LTS (Bionic) Docker container for Ansible playbook and role testing.
