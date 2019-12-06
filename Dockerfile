@@ -13,7 +13,7 @@ RUN apt-get update \
        software-properties-common \
        rsyslog systemd systemd-cron sudo iproute2 \
        # https://github.com/artis3n/docker-ubuntu1804-ansible/issues/10
-       libx11-xcb-dev \
+       libx11-xcb1 libxcb1 \
     && rm -Rf /var/lib/apt/lists/* \
     && rm -Rf /usr/share/doc && rm -Rf /usr/share/man \
     && apt-get clean
